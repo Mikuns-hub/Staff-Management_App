@@ -1,0 +1,25 @@
+﻿@model Late_Staff.Models.StaffMember
+@{
+    ViewData["Title"] = "Login Staff";
+}
+<p>ID: @Model.ID</p>
+<p>Name: @Model.Name</p>
+<p>Arrival Time: @Model.ArrivalTime</p>
+
+@if (ViewBag.IsLate)
+{
+    <p style="color: red;">This staff member arrived late.</p>
+}
+else
+{
+    <p style="color: green;">This staff member arrived on time.</p>
+}
+
+@if (ViewBag.IsLate)
+{
+    <form method="post" action="@Url.Action("RecordLateArrival", "Staff", new { id = Model.ID })">
+        @Html.AntiForgeryToken()
+
+        <input type="submit" value="Record Late Arrival" />
+    </form>
+}
