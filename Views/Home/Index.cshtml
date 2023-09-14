@@ -1,8 +1,14 @@
-﻿@{
+﻿@{using (Html.BeginForm())
     ViewData["Title"] = "Home Page";
 }
 
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        <h2 class="display-4">Welcome</h2>
+        <h3>
+        <button style="color: green" type="button" onclick="location.href='@Url.Action("LogArrivalTime", "StaffMember")'">Login ArrivalTime</button>
+        <button style="color: red" type="button" onclick="location.href='@Url.Action("CheckLateStaffs", "StaffMember")'">Check LateStaffs</button>
+        </h3>
 </div>
+
+ 
