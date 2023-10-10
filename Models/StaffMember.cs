@@ -6,7 +6,7 @@ namespace Late_Staff.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }   
-        public string StaffId { get; set; }
+        public string? StaffId { get; set; }
 
     }
 }

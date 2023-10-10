@@ -1,17 +1,18 @@
-﻿@{
+﻿@model Late_Staff.Dto.LogArrivalDto;
+@{
     ViewData["Title"] = "Login Staff";
 }
 
 <h1> @ViewData["Title"]</h1>
 
 <div class=" text-center">
-    <body>
-        <form onsubmit="handlesubmit">
-            <input placeholder="Staff Id"/>
-            <button style="color: blue" type="submit" onsubmit="alert('Welcome!')">SUBMIT</button>
+        <form asp-controller="StaffMember" asp-action="LogArrivalTime" method="post">
+            <input placeholder="Staff Id" asp-for="StaffId" class="form-control" required />
+            <button style="color: cornflowerblue" type="submit" onsubmit="alert('Welcome!!')" class="btn btn-primary">SUBMIT</button>
+            @Html.ValidationMessage("StaffId")
         </form>
-    </body>
-
 </div>
 
-<p>Use this page to detail your site's privacy policy.</p>
+
+
+<p>Use this page to detail yougyr site's privacy policy.</p>
